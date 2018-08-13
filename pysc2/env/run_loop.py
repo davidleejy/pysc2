@@ -26,10 +26,6 @@ def run_loop(agents, env, max_frames=0, max_episodes=0):
   total_episodes = 0
   start_time = time.time()
 
-  slowed_steps_lim = 50
-  slow_steps = False
-  cur_slowed_steps = 0
-
   observation_spec = env.observation_spec()
   action_spec = env.action_spec()
   for agent, obs_spec, act_spec in zip(agents, observation_spec, action_spec):
@@ -50,17 +46,6 @@ def run_loop(agents, env, max_frames=0, max_episodes=0):
         if timesteps[0].last():
           break
         timesteps = env.step(actions)
-        action =  actions[0]
-        if action.function == 2:
-          time.sleep(1.0)
-          slow_steps = True
-        # slow:
-        if slow_steps:
-          time.sleep(0.25)
-          cur_slowed_steps += 1
-          if cur_slowed_steps > slowed_steps_lim:
-            cur_slowed_steps = 0
-            slow_steps = False
   except KeyboardInterrupt:
     pass
   finally:
