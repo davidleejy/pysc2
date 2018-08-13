@@ -130,6 +130,7 @@ def get(map_name):
   # Get the list of maps. This isn't at module scope to avoid problems of maps
   # being defined after this module is imported.
   maps = get_maps()
+  # print(maps)
   map_class = maps.get(map_name)
   if map_class:
     return map_class()

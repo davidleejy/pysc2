@@ -37,6 +37,11 @@ mini_games = [
     "DefeatZerglingsAndBanelings",  # 120s
     "FindAndDefeatZerglings",  # 180s
     "MoveToBeacon",  # 120s
+    "ForceField",    #soygema
+    "FlowerFields",    #soygema
+    "HallucinIce",    #soygema
+    "redwaves",    #soygema
+    "SentryDefense"    #soygema
 ]
 
 
